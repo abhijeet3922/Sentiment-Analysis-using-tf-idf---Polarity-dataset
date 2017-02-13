@@ -32,7 +32,7 @@ def make_Dictionary(root_dir):
             del dictionary[item]
         elif len(item) == 1:
             del dictionary[item]
-    dictionary = dictionary.most_common(3000)
+    dictionary = dictionary.most_common(4000)
     
     np.save('dict_movie.npy',dictionary) 
     
@@ -41,7 +41,7 @@ def make_Dictionary(root_dir):
 def extract_features(root_dir): 
     emails_dirs = [os.path.join(root_dir,f) for f in os.listdir(root_dir)]  
     docID = 0
-    features_matrix = np.zeros((2000,3000)) 
+    features_matrix = np.zeros((2000,4000)) 
     for emails_dir in emails_dirs:
         emails = [os.path.join(emails_dir,f) for f in os.listdir(emails_dir)]
         for mail in emails:
